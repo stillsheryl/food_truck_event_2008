@@ -142,6 +142,7 @@ class EventTest < Minitest::Test
       food_trucks: [food_truck2, food_truck3]
     },
   }
+
   assert_equal expected, event.total_inventory
   end
 
@@ -164,7 +165,7 @@ class EventTest < Minitest::Test
     event.add_food_truck(food_truck2)
     event.add_food_truck(food_truck3)
 
-
+    assert_equal item1, event.overstocked_items
   end
 
 end

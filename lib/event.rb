@@ -31,9 +31,25 @@ class Event
     items.sort.uniq
   end
 
+  def quantity_food_truck
+    item_info = {quantity: 0, food_trucks: []}
+    @food_trucks.each do |food_truck|
+      food_truck.inventory.each do |item, quantity|
+        item_info[:quantity] += quantity
+        item_info[:food_trucks] << food_truck
+      end
+    end
+    item_info
+  end
+
   def total_inventory
     total_inventory = {}
-
+    @food_trucks.each do |food_truck|
+      food_truck.inventory.each do |item, quantity|
+        total_inventory[item] = quantity_food_truck
+      end
+    end
+    total_inventory
   end
 
 end
