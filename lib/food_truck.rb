@@ -6,11 +6,19 @@ class FoodTruck
   end
 
   def check_stock(item)
-    0
+    if @inventory[item]
+      @inventory[item]
+    else
+      0
+    end
   end
 
   def stock(item, amount)
-    @inventory[item] = amount
+    if @inventory[item]
+      @inventory[item] += amount
+    else
+      @inventory[item] = amount
+      end
   end
 
 end
