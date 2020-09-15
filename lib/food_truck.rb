@@ -18,7 +18,13 @@ class FoodTruck
       @inventory[item] += amount
     else
       @inventory[item] = amount
-      end
+    end
+  end
+
+  def potential_revenue
+    @inventory.sum do |item, amount|
+      item.price * amount
+    end
   end
 
 end
