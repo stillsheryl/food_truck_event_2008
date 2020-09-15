@@ -21,4 +21,19 @@ class Event
     end
   end
 
+  def sorted_item_list
+    items = []
+    @food_trucks.each do |food_truck|
+      food_truck.inventory.each do |item, quantity|
+        items << item.name
+      end
+    end
+    items.sort.uniq
+  end
+
+  def total_inventory
+    total_inventory = {}
+
+  end
+
 end
