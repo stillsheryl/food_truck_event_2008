@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/food_truck'
 require './lib/item'
+require './lib/food_truck'
 
 class FoodTruckTest < Minitest::Test
 
